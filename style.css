@@ -129,8 +129,8 @@ body {
     position: absolute;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 20% 80%, rgba(79, 70, 229, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 80%, rgba(79, 70, 229, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.3) 0%, transparent 50%);
     animation: float 20s ease-in-out infinite;
 }
 
@@ -291,12 +291,11 @@ nav {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: grayscale(0%);
     transition: all 0.4s ease;
 }
 
 .hero-avatar:hover img {
-    filter: grayscale(90%);
+    
     transform: scale(1.05);
 }
 
@@ -417,7 +416,7 @@ nav {
     position: absolute;
     width: 60px;
     height: 60px;
-    border: 2px solid rgba(79, 70, 229, 0.3);
+    border: 2px solid rgba(79, 70, 229, 0.4);
     border-radius: 12px;
     animation: floatRandom 15s ease-in-out infinite;
 }
@@ -859,6 +858,7 @@ footer {
 
 @media (max-width: 768px) {
     .nav-links { display: none; }
+    
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -869,19 +869,54 @@ footer {
     }
     .hero-visual {
         order: 1;
-        min-height: 350px; /* Adjust for smaller screen */
+        min-height: 320px;
     }
     .hero-avatar {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
     }
+
     .orbit-container {
-        display: none; /* Hide orbiting icons on mobile */
+        width: 280px;
+        height: 280px;
     }
+    .orbit-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        border-width: 1px;
+    }
+    .orbit-icon.icon-csharp {
+        font-size: 1.2rem;
+    }
+
     .hero-buttons { justify-content: center; }
 
     .portfolio-grid { grid-template-columns: 1fr; }
-    .contact-container { padding: 2rem; }
+
+    /* === CONTACT SECTION FIX FOR MOBILE === */
+    .contact-container { 
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-group {
+        width: 100%;
+    }
+    .contact-form .btn-primary {
+        margin: 0 auto; /* Center the button */
+    }
+    /* === END OF FIX === */
+
+
     .footer-content { flex-direction: column; text-align: center; }
     .footer-links { margin: 1.5rem 0; }
 }
