@@ -204,17 +204,43 @@ nav {
     background: rgba(79, 70, 229, 0.1);
 }
 
-.btn-nav-download {
-    padding: 0.5rem 1.2rem;
-    background-color: var(--primary-color);
-    color: white !important;
-    border-radius: 50px;
-    font-size: 0.9rem;
+/* Styles for the right-side control buttons */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between the buttons */
 }
 
-.btn-nav-download:hover {
-    background-color: var(--primary-dark);
-    color: white !important;
+/* Style for the new mobile-only CV button */
+.btn-cv-mobile {
+    /* Style properties */
+    background: none;
+    border: 2px solid var(--border-color);
+    color: var(--text-secondary);
+    border-radius: 50px; /* Creates a pill shape */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    text-decoration: none;    
+    display: none; /* Stays hidden on desktop */
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Adds space between the icon and text */
+}
+
+.btn-cv-mobile:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* This rule shows the button ONLY on small screens */
+@media (max-width: 768px) {
+    .btn-cv-mobile {
+        display: inline-flex; /* Makes the button visible */
+    }
 }
 
 .theme-toggle {
