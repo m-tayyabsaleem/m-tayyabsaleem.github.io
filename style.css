@@ -463,7 +463,7 @@ nav {
 }
 
 .skill-item i {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
