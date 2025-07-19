@@ -133,14 +133,24 @@ body {
     width: 200%;
     height: 200%;
     background: radial-gradient(circle at 20% 80%, rgba(79, 70, 229, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.3) 0%, transparent 50%);
+        radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.3) 0%, transparent 50%);
     animation: float 20s ease-in-out infinite;
 }
 
 @keyframes float {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(30px, -30px) rotate(120deg); }
-    66% { transform: translate(-20px, 20px) rotate(240deg); }
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(30px, -30px) rotate(120deg);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) rotate(240deg);
+    }
 }
 
 /* ------------------- */
@@ -181,6 +191,115 @@ nav {
     z-index: 1001;
 }
 
+/* --- Full Body Background Animation --- */
+.background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-shapes li {
+    position: absolute;
+    color: rgba(20, 184, 166, 0.2);
+    font-size: 40px;
+    animation: animate-shapes 25s linear infinite;
+    bottom: -150px;
+}
+
+.background-shapes li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.background-shapes li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.background-shapes li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.background-shapes li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.background-shapes li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.background-shapes li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.background-shapes li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.background-shapes li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.background-shapes li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.background-shapes li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+@keyframes animate-shapes {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -208,7 +327,8 @@ nav {
 .nav-controls {
     display: flex;
     align-items: center;
-    gap: 1rem; /* Space between the buttons */
+    gap: 1rem;
+    /* Space between the buttons */
 }
 
 /* Style for the new mobile-only CV button */
@@ -217,17 +337,20 @@ nav {
     background: none;
     border: 2px solid var(--border-color);
     color: var(--text-secondary);
-    border-radius: 50px; /* Creates a pill shape */
+    border-radius: 50px;
+    /* Creates a pill shape */
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 0.9rem;
     font-weight: 600;
     padding: 0.5rem 1rem;
-    text-decoration: none;    
-    display: none; /* Stays hidden on desktop */
+    text-decoration: none;
+    display: none;
+    /* Stays hidden on desktop */
     align-items: center;
     justify-content: center;
-    gap: 0.5rem; /* Adds space between the icon and text */
+    gap: 0.5rem;
+    /* Adds space between the icon and text */
 }
 
 .btn-cv-mobile:hover {
@@ -239,7 +362,8 @@ nav {
 /* This rule shows the button ONLY on small screens */
 @media (max-width: 768px) {
     .btn-cv-mobile {
-        display: inline-flex; /* Makes the button visible */
+        display: inline-flex;
+        /* Makes the button visible */
     }
 }
 
@@ -395,19 +519,38 @@ nav {
 }
 
 @keyframes heroFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 /* --- Orbiting Icons --- */
 @keyframes orbit {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes float-icon {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .orbit-container {
@@ -429,25 +572,85 @@ nav {
     align-items: center;
     font-size: 2rem;
     color: var(--text-primary);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     animation: orbit 30s linear infinite reverse, float-icon 4s ease-in-out infinite;
 }
 
-.orbit-icon.icon-unity { top: 0; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
-.orbit-icon.icon-csharp { bottom: 10%; left: 10%; animation-delay: 1.3s; font-weight: 700; font-size: 1.8rem; }
-.orbit-icon.icon-gaming { bottom: 10%; right: 10%; animation-delay: 2.6s; }
+.orbit-icon.icon-unity {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0s;
+}
 
-.floating-elements { position: absolute; width: 100%; height: 100%; top:0; left:0; pointer-events: none; }
-.floating-element { position: absolute; width: 60px; height: 60px; border: 2px solid rgba(79, 70, 229, 0.4); border-radius: 12px; animation: floatRandom 15s ease-in-out infinite; }
-.floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-.floating-element:nth-child(2) { top: 60%; right: 10%; animation-delay: 5s; }
-.floating-element:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 10s; }
+.orbit-icon.icon-csharp {
+    bottom: 10%;
+    left: 10%;
+    animation-delay: 1.3s;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.orbit-icon.icon-gaming {
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 2.6s;
+}
+
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.floating-element {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgba(79, 70, 229, 0.4);
+    border-radius: 12px;
+    animation: floatRandom 15s ease-in-out infinite;
+}
+
+.floating-element:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+    top: 60%;
+    right: 10%;
+    animation-delay: 5s;
+}
+
+.floating-element:nth-child(3) {
+    bottom: 20%;
+    left: 15%;
+    animation-delay: 10s;
+}
 
 @keyframes floatRandom {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    25% { transform: translateY(-30px) rotate(90deg); }
-    50% { transform: translateY(-60px) rotate(180deg); }
-    75% { transform: translateY(-30px) rotate(270deg); }
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-30px) rotate(90deg);
+    }
+
+    50% {
+        transform: translateY(-60px) rotate(180deg);
+    }
+
+    75% {
+        transform: translateY(-30px) rotate(270deg);
+    }
 }
 
 /* ------------------- */
@@ -507,7 +710,7 @@ nav {
 
 .skill-item span {
     font-weight: 500;
-        word-break: break-word;
+    word-break: break-word;
 
     color: var(--text-secondary);
     transition: color 0.3s ease;
@@ -516,6 +719,7 @@ nav {
 .skill-item:hover span {
     color: white;
 }
+
 @media (max-width: 480px) {
     .skills-grid {
         /* Forces a 2-column layout instead of 3 */
@@ -600,55 +804,239 @@ nav {
     margin: 3rem auto 0;
 }
 
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
 .project-item {
     background: var(--bg-card);
     padding: 2rem;
     border-radius: 20px;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
+    will-change: transform, box-shadow, border-color;
 }
 
-.project-item::before {
-    content: '';
+/* Floating icons - Only animate on hover */
+.project-item::before,
+.project-item::after,
+.project-item .project-title::before,
+.project-item .project-title::after,
+.project-item .project-description::before,
+.project-item .project-description::after,
+.project-item .project-tags::before,
+.project-item .project-tags::after,
+.project-item .project-category::before,
+.project-item .project-category::after {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+    font-weight: 900;
     position: absolute;
-    width: 150%;
-    height: 150%;
-    top: -25%;
-    left: -25%;
-    z-index: 0;
-    background: conic-gradient(
-        from 0deg,
-        transparent,
-        rgba(79, 70, 229, 0.5),
-        transparent 30%
-    );
-    animation: spin 7s linear infinite paused;
     opacity: 0;
-    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+    bottom: -60px;
+    /* Removed animation from here - only apply on hover */
 }
 
+/* Icon 1: Gamepad */
+.project-item::before {
+    content: '\f11b';
+    font-size: 2.8rem;
+    left: 12%;
+    color: rgba(124, 58, 237, 0.7);
+}
+
+/* Icon 2: Code */
+.project-item::after {
+    content: '\f121';
+    font-size: 2.4rem;
+    left: 78%;
+    color: rgba(168, 85, 247, 0.65);
+}
+
+/* Icon 3: Cogs */
+.project-item .project-title::before {
+    content: '\f085';
+    font-size: 2.2rem;
+    left: 58%;
+    color: rgba(59, 130, 246, 0.7);
+}
+
+/* Icon 4: Robot */
+.project-item .project-description::after {
+    content: '\f544';
+    font-size: 2.6rem;
+    left: 22%;
+    color: rgba(236, 72, 153, 0.65);
+}
+
+/* Icon 5: Lightning Bolt */
+.project-item .project-tags::before {
+    content: '\f0e7';
+    font-size: 2rem;
+    left: 42%;
+    color: rgba(245, 158, 11, 0.8);
+}
+
+/* Icon 6: Desktop */
+.project-item .project-category::after {
+    content: '\f108';
+    font-size: 2.3rem;
+    left: 8%;
+    color: rgba(20, 184, 166, 0.7);
+}
+
+/* Icon 7: Rocket */
+.project-item .project-tags::after {
+    content: '\f135';
+    font-size: 2.1rem;
+    left: 72%;
+    color: rgba(239, 68, 68, 0.75);
+}
+
+/* Icon 8: Database */
+.project-item .project-description::before {
+    content: '\f1c0';
+    font-size: 1.9rem;
+    left: 32%;
+    color: rgba(34, 197, 94, 0.8);
+}
+
+/* Icon 9: Mobile */
+.project-item .project-category::before {
+    content: '\f3cd';
+    font-size: 1.8rem;
+    left: 88%;
+    color: rgba(99, 102, 241, 0.7);
+}
+
+/* Icon 10: Cloud */
+.project-item .project-title::after {
+    content: '\f0c2';
+    font-size: 2.2rem;
+    left: 48%;
+    color: rgba(14, 165, 233, 0.75);
+}
+
+/* Show floating icons ONLY on hover with immediate animations */
 .project-item:hover::before {
-    opacity: 0.3;
-    animation-play-state: running;
+    opacity: 1;
+    animation: float-icons 8s linear infinite;
+    animation-delay: 0s;
 }
 
+.project-item:hover::after {
+    opacity: 1;
+    animation: float-icons 9s linear infinite;
+    animation-delay: 0.3s;
+}
+
+.project-item:hover .project-title::before {
+    opacity: 1;
+    animation: float-icons 7s linear infinite;
+    animation-delay: 0.6s;
+}
+
+.project-item:hover .project-title::after {
+    opacity: 1;
+    animation: float-icons 8.5s linear infinite;
+    animation-delay: 0.9s;
+}
+
+.project-item:hover .project-description::before {
+    opacity: 1;
+    animation: float-icons 7.5s linear infinite;
+    animation-delay: 1.2s;
+}
+
+.project-item:hover .project-description::after {
+    opacity: 1;
+    animation: float-icons 8.2s linear infinite;
+    animation-delay: 1.5s;
+}
+
+.project-item:hover .project-tags::before {
+    opacity: 1;
+    animation: float-icons 6.8s linear infinite;
+    animation-delay: 0.1s;
+}
+
+.project-item:hover .project-tags::after {
+    opacity: 1;
+    animation: float-icons 9.2s linear infinite;
+    animation-delay: 1.8s;
+}
+
+.project-item:hover .project-category::before {
+    opacity: 1;
+    animation: float-icons 7.8s linear infinite;
+    animation-delay: 2.1s;
+}
+
+.project-item:hover .project-category::after {
+    opacity: 1;
+    animation: float-icons 8.8s linear infinite;
+    animation-delay: 2.4s;
+}
+
+/* Floating animation - Faster and more responsive */
+@keyframes float-icons {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+        filter: brightness(1);
+    }
+    
+    2% {
+        opacity: 0.7;
+        transform: translateY(-10px) rotate(15deg) scale(0.9);
+    }
+    
+    10% {
+        opacity: 1;
+        filter: brightness(1.3);
+        transform: translateY(-50px) rotate(90deg) scale(1);
+    }
+    
+    50% {
+        opacity: 0.9;
+        filter: brightness(1.2);
+        transform: translateY(-200px) rotate(360deg) scale(1.1);
+    }
+    
+    90% {
+        opacity: 0.4;
+        filter: brightness(0.9);
+        transform: translateY(-350px) rotate(630deg) scale(0.9);
+    }
+
+    100% {
+        transform: translateY(-400px) rotate(720deg) scale(0.7);
+        opacity: 0;
+        filter: brightness(0.8);
+    }
+}
+
+/* Enhanced hover effects for the main card */
+.project-item:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-glow), 0 25px 50px rgba(79, 70, 229, 0.15);
+    border-color: var(--primary-color);
+}
+
+/* Ensure proper layering */
 .project-item > * {
     position: relative;
     z-index: 1;
 }
 
-.project-item:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-glow);
+/* Additional positioning for pseudo elements */
+.project-item .project-title,
+.project-item .project-description,
+.project-item .project-tags,
+.project-item .project-category {
+    position: relative;
 }
 
+/* Existing styles for project elements */
 .project-category {
     color: var(--primary-color);
     font-size: 0.8rem;
@@ -656,6 +1044,11 @@ nav {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.project-title {
+    position: relative;
 }
 
 .project-title a {
@@ -688,6 +1081,7 @@ nav {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin: 1rem 0;
+    position: relative;
 }
 
 .project-tags span {
@@ -698,13 +1092,23 @@ nav {
     font-size: 0.8rem;
     font-weight: 600;
     border: 1px solid rgba(79, 70, 229, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-item:hover .project-tags span {
+    background: rgba(79, 70, 229, 0.25);
+    border-color: rgba(79, 70, 229, 0.5);
+    transform: translateY(-3px) scale(1.05);
 }
 
 .project-description {
     color: var(--text-secondary);
     line-height: 1.7;
+    position: relative;
 }
 
+/* Ensure Font Awesome is loaded */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 /* ------------------- */
 /* Contact Section */
 /* ------------------- */
@@ -738,7 +1142,8 @@ nav {
     transition: color 0.3s ease;
 }
 
-.contact-item:hover, .contact-item a:hover {
+.contact-item:hover,
+.contact-item a:hover {
     color: var(--primary-color);
 }
 
@@ -875,9 +1280,22 @@ footer {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
-    40% { transform: translate(-50%, -10px); }
-    60% { transform: translate(-50%, -5px); }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    40% {
+        transform: translate(-50%, -10px);
+    }
+
+    60% {
+        transform: translate(-50%, -5px);
+    }
 }
 
 /* ------------------- */
@@ -887,11 +1305,11 @@ footer {
     .section {
         padding: 4rem 1.5rem;
     }
-    
+
     .hero-content h1 {
         font-size: 3rem;
     }
-    
+
     .services-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
@@ -901,127 +1319,130 @@ footer {
     .contact-container {
         grid-template-columns: 1fr;
     }
-    
+
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
+
     /* Mobile Navigation */
     .nav-links {
         display: none;
     }
-    
+
     .mobile-menu-toggle {
         display: block;
     }
-    
+
     /* Hero Section Mobile */
     .hero {
         padding-top: 120px;
     }
-    
+
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
     }
-    
+
     .hero-content {
         order: 2;
     }
-    
+
     .hero-visual {
         order: 1;
         min-height: 280px;
     }
-    
+
     .hero-avatar {
         width: 200px;
         height: 200px;
     }
-    
+
     .orbit-container {
         width: 300px;
         height: 300px;
     }
-    
+
     .orbit-icon {
         width: 50px;
         height: 50px;
         font-size: 1.3rem;
     }
-    
+
     .orbit-icon.icon-csharp {
         font-size: 1.1rem;
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero-buttons {
         justify-content: center;
         gap: 0.5rem;
     }
-    
+
     .hero-buttons .btn {
         padding: 0.6rem 1.5rem;
         font-size: 0.9rem;
     }
-    
+
     /* Sections Mobile */
     .section {
         padding: 3rem 1rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .services-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 1rem;
     }
-    
+
     .project-title a {
         font-size: 1.3rem;
     }
-    
+
     .project-item {
         padding: 1.5rem;
     }
+
     .fade-in {
         opacity: 1;
         transform: none;
     }
+
     /* Contact Mobile */
     .contact-container {
         padding: 2rem 1.5rem;
         gap: 2rem;
     }
-    
+
     .contact-info {
         text-align: center;
     }
-    
+
     .contact-item {
         justify-content: center;
     }
-    
+
     /* Footer Mobile */
     .footer-content {
         flex-direction: column;
         text-align: center;
         gap: 1.5rem;
     }
-    
+
     .footer-links {
         flex-wrap: wrap;
         justify-content: center;
@@ -1032,40 +1453,40 @@ footer {
     .hero-content h1 {
         font-size: 2rem;
     }
-    
+
     .hero-avatar {
         width: 160px;
         height: 160px;
     }
-    
+
     .orbit-container {
         width: 240px;
         height: 240px;
     }
-    
+
     .orbit-icon {
         width: 40px;
         height: 40px;
         font-size: 1.1rem;
     }
-    
+
     .orbit-icon.icon-csharp {
         font-size: 0.9rem;
     }
-    
+
     .section-title {
         font-size: 1.8rem;
     }
-    
+
     .btn {
         padding: 0.6rem 1.2rem;
         font-size: 0.85rem;
     }
-    
+
     .contact-container {
         padding: 1.5rem 1rem;
     }
-    
+
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
         grid-template-columns: repeat(2, 1fr);
@@ -1073,12 +1494,12 @@ footer {
 
 
     }
-   
+
     .skill-item {
         padding: 1rem;
         min-height: 100px;
     }
-    
+
     .skill-item i {
         font-size: 2rem;
     }
