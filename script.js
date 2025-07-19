@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         applyTheme(newTheme);
     });
 
-    applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+    // Always start with light mode - changed from 'dark' to 'light'
+    applyTheme('light');
 
 
     // -------------------
